@@ -1,0 +1,174 @@
+(*Indices of the given Indextype (p.e. Colour) will be pictures in the Vertices (FeynmanRules) by the chosen name (p.e. col)*)
+IndexStyle[Colour, col];					
+IndexStyle[Spin, spi];
+
+(* Limits the Range of the Indextype *)
+IndexRange[ Index[Colour] ] = Range[3];  	 
+
+(* Will be Name of UFO-file*)
+M$ModelName = "DMFV_uR_M";      		 
+
+(* Information not necessary*)
+M$Information = {
+	Authors			-> {"Harun Acaroğlu, Monika Blanke"},		 
+	Version 		-> "1.1",
+	Date			-> "09/25/2023",
+	Institutions	-> "KIT",
+	Emails			-> {harun.acaroglu@kit.edu, monika.blanke@kit.edu}	
+};
+
+(*Region to specify the parameters of the model*)
+M$Parameters = {			
+
+	Rel11 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel12 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel13 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel21 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel22 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel23 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel31 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+     	},
+
+	Rel32 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel33 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+    Iml11 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml12 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml13 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml21 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml22 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml23 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml31 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+     	},
+
+	Iml32 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml33 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+    lambda == {
+		ComplexParameter 	-> True,
+       	ParameterType 		-> Internal,
+	  	Indices				-> {Index[Generation], Index[Generation]},
+	  	Value				-> {lambda[1,1] 	-> (Rel11 + I* Iml11), 
+	  		   					lambda[1,2] 	-> (Rel12 + I* Iml12),
+			   					lambda[1,3] 	-> (Rel13 + I* Iml13),
+	  		   					lambda[2,1] 	-> (Rel21 + I* Iml21),
+			   					lambda[2,2] 	-> (Rel22 + I* Iml22),
+			   					lambda[2,3] 	-> (Rel23 + I* Iml23),		
+			   					lambda[3,1] 	-> (Rel31 + I* Iml31),
+			   					lambda[3,2] 	-> (Rel32 + I* Iml32),
+			   					lambda[3,3] 	-> (Rel33 + I* Iml33)			
+			  				},
+	  	Description			-> "coupling matrix",
+	  	InteractionOrder 	-> {NP,1}
+    },
+
+	lambdaHphi == {
+		ParameterType 		-> External,
+		Value	      		-> 0,
+	  	InteractionOrder 	-> {NP,1}	
+	},
+
+	lambdaphiphi =={
+		ParameterType 		-> External,
+		Value	      		-> 0,
+	  	InteractionOrder 	-> {NP,1}
+	}
+};
+
+
+
+M$ClassesDescription = {
+
+	S[100] =={
+	  ClassName				-> phi,
+	  SelfConjugate			-> False,
+	  QuantumNumbers		-> {Q -> 2/3},
+	  Mass					-> {Mphi, 500},
+	  Width					-> {Wphi, 1},
+	  Indices				-> {Index[Colour]}
+	},
+
+	F[100] =={
+	  ClassName				-> chi,
+	  ClassMembers			-> {chi1, chi2, chi3},
+	  Mass					-> {Mchi, 
+	  							{mchi1, 300}, 
+	  							{mchi2, 200}, 
+	  							{mchi3, 100}
+	  							},
+	  Indices				-> {Index[Generation]},
+	  FlavorIndex			-> Generation,
+	  SelfConjugate 		-> True,
+	  Width					-> {{wchi1, 1}, 
+	  							{wchi2, 1}, 
+	  							{wchi3, 1}
+	  							},
+	  ParticleName			-> {"chi1","chi2","chi3"}
+	}
+};

@@ -1,0 +1,194 @@
+(*Indices of the given Indextype (p.e. Colour) will be pictures in the Vertices (FeynmanRules) by the chosen name (p.e. col)*)
+IndexStyle[Colour, col];					
+IndexStyle[Spin, spi];
+
+(* Limits the Range of the Indextype *)
+IndexRange[ Index[Colour] ] = Range[3];
+
+
+(* Will be Name of UFO-file*)
+M$ModelName = "DMFV_lR_CS";
+
+(* Information not necessary*)
+M$Information = {
+	Authors			-> {"Harun Acaroğlu, Monika Blanke, Mustafa Tabet"},		 
+	Version 		-> "1.1",
+	Date			-> "09/25/2023",
+	Institutions	-> {"Karlsruhe Institute of Technology", "Technical University of Dortmund"},
+	Emails			-> {"harun.acaroglu@kit.edu", "monika.blanke@kit.edu", "mustafa.tabet@tu-dortmund.de"}	
+};
+
+(*Region to specify the parameters of the model*)
+M$Parameters = {			
+
+	Rel11 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel12 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel13 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel21 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel22 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel23 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel31 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+     	},
+
+	Rel32 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Rel33 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+    Iml11 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml12 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml13 == {
+     	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml21 == {
+    	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml22 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml23 == {
+       	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml31 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+     	},
+
+	Iml32 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+	Iml33 == {
+      	ParameterType 		-> External,
+		Value	      		-> 1
+    },
+
+    lambda == {
+		ComplexParameter 	-> True,
+       	ParameterType 		-> Internal,
+	  	Indices				-> {Index[Generation], Index[Generation]},
+	  	Value				-> {lambda[1,1] 	-> (Rel11 + I* Iml11), 
+	  		   					lambda[1,2] 	-> (Rel12 + I* Iml12),
+			   					lambda[1,3] 	-> (Rel13 + I* Iml13),
+	  		   					lambda[2,1] 	-> (Rel21 + I* Iml21),
+			   					lambda[2,2] 	-> (Rel22 + I* Iml22),
+			   					lambda[2,3] 	-> (Rel23 + I* Iml23),		
+			   					lambda[3,1] 	-> (Rel31 + I* Iml31),
+			   					lambda[3,2] 	-> (Rel32 + I* Iml32),
+			   					lambda[3,3] 	-> (Rel33 + I* Iml33)			
+			  				},
+	  	Description			-> "lepton portal coupling matrix",
+	  	InteractionOrder 	-> {NP,1}
+    },
+
+	lH1 == {
+		ParameterType 		-> External,
+		Value	      		-> 1,
+	  	InteractionOrder 	-> {NP,1}	
+	},
+
+	lH2 == {
+		ParameterType 		-> External,
+		Value	      		-> 1,
+	  	InteractionOrder 	-> {NP,1}	
+	},
+
+	lH3 == {
+		ParameterType 		-> External,
+		Value	      		-> 1,
+	  	InteractionOrder 	-> {NP,1}	
+	},
+
+	lambdaphiphi =={
+		ParameterType 		-> External,
+		Value	      		-> 0,
+	  	InteractionOrder 	-> {NP,1}
+	}
+}
+
+
+
+
+M$ClassesDescription = {
+
+	F[100] =={
+	  	ClassName			-> psi,
+	  	SelfConjugate		-> False,
+	  	QuantumNumbers		-> {Q -> -1, LeptonNumber -> 1},
+	  	Mass				-> {Mpsi, 500},
+	  	Width				-> {Wpsi, 1}
+	},
+
+	F[101] =={
+	  	ClassName 			-> Psi,
+		SelfConjugate 		-> False,
+	  	QuantumNumbers   	-> {Y -> -1},
+		Unphysical 			-> True,
+		Definitions 		-> {Psi[sp1_] :> Module[{sp2}, psi[sp1]]}
+	},
+
+	S[100] =={
+	  	ClassName			-> phi,
+	  	ClassMembers		-> {phi1, phi2, phi3},
+	  	Mass				-> {Mphi, 
+	  							{mphi1, 200}, 
+	  							{mphi2, 200}, 
+	  							{mphi3, 200}
+	  							},
+	  	Indices				-> {Index[Generation]},
+	  	FlavorIndex			-> Generation,
+	  	SelfConjugate 		-> False,
+	  	Width				-> {{wphi1, 1}, 
+	  							{wphi2, 1}, 
+	  							{wphi3, 1}},
+	  	ParticleName		-> {"phi1","phi2","phi3"}
+ 	}
+}
