@@ -5,20 +5,20 @@ IndexStyle[Spin, spi];
 (* Limits the Range of the Indextype *)
 IndexRange[ Index[Colour] ] = Range[3];
 
-
 (* Will be Name of UFO-file*)
 M$ModelName = "DMFV_lR_CS";
 
 (* Information not necessary*)
 M$Information = {
-	Authors			-> {"Harun Acaroğlu, Monika Blanke, Mustafa Tabet"},		 
+	Authors			-> "Harun Acaroğlu",		 
 	Version 		-> "1.1",
 	Date			-> "09/25/2023",
-	Institutions	-> {"Karlsruhe Institute of Technology", "Technical University of Dortmund"},
-	Emails			-> {"harun.acaroglu@kit.edu", "monika.blanke@kit.edu", "mustafa.tabet@tu-dortmund.de"}	
+	Institutions	-> "Karlsruhe Institute of Technology",
+	Emails			-> "harun.acaroglu@kit.edu"	
 };
 
 (*Region to specify the parameters of the model*)
+
 M$Parameters = {			
 
 	Rel11 == {

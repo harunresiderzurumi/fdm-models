@@ -10,14 +10,15 @@ M$ModelName = "DMFV_uR_D";
 
 (* Information not necessary*)
 M$Information = {
-	Authors			-> {"Harun Acaroğlu, Monika Blanke"},		 
+	Authors			-> "Harun Acaroğlu",		 
 	Version 		-> "1.1",
 	Date			-> "09/25/2023",
-	Institutions	-> "KIT",
-	Emails			-> {harun.acaroglu@kit.edu, monika.blanke@kit.edu}	
+	Institutions	-> "Karlsruhe Institute of Technology",
+	Emails			-> "harun.acaroglu@kit.edu"	
 };
 
 (*Region to specify the parameters of the model*)
+
 M$Parameters = {			
 
 	Rel11 == {
@@ -119,7 +120,7 @@ M$Parameters = {
 			   					lambda[1,3] 	-> (Rel13 + I* Iml13),
 	  		   					lambda[2,1] 	-> (Rel21 + I* Iml21),
 			   					lambda[2,2] 	-> (Rel22 + I* Iml22),
-			   					lambda[2,3] 	-> (Rel23 + I* Iml23),		
+			   					lambda[2,3] 	-> (Rel23 + I* Iml23),	
 			   					lambda[3,1] 	-> (Rel31 + I* Iml31),
 			   					lambda[3,2] 	-> (Rel32 + I* Iml32),
 			   					lambda[3,3] 	-> (Rel33 + I* Iml33)			
@@ -140,130 +141,6 @@ M$Parameters = {
 	  	InteractionOrder 	-> {NP,1}
 	}
 }
-M$Parameters = {			
-
-	Rel11 == {
-     	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel12 == {
-    	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel13 == {
-     	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel21 == {
-    	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel22 == {
-       	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel23 == {
-       	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel31 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-     	},
-
-	Rel32 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Rel33 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-    Iml11 == {
-     	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml12 == {
-    	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml13 == {
-     	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml21 == {
-    	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml22 == {
-       	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml23 == {
-       	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml31 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-     	},
-
-	Iml32 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-	Iml33 == {
-      	ParameterType 		-> External,
-		Value	      		-> 1
-    },
-
-    lambda == {
-		ComplexParameter 	-> True,
-       	ParameterType 		-> Internal,
-	  	Indices				-> {Index[Generation], Index[Generation]},
-	  	Value				-> {lambda[1,1] 	-> (Rel11 + I* Iml11), 
-	  		   					lambda[1,2] 	-> (Rel12 + I* Iml12),
-			   					lambda[1,3] 	-> (Rel13 + I* Iml13),
-	  		   					lambda[2,1] 	-> (Rel21 + I* Iml21),
-			   					lambda[2,2] 	-> (Rel22 + I* Iml22),
-			   					lambda[2,3] 	-> (Rel23 + I* Iml23),		
-			   					lambda[3,1] 	-> (Rel31 + I* Iml31),
-			   					lambda[3,2] 	-> (Rel32 + I* Iml32),
-			   					lambda[3,3] 	-> (Rel33 + I* Iml33)			
-			  				},
-	  	Description			-> "coupling matrix",
-	  	InteractionOrder 	-> {NP,1}
-    },
-
-	lambdaHphi == {
-		ParameterType 		-> External,
-		Value	      		-> 0,
-	  	InteractionOrder 	-> {NP,1}	
-	},
-
-	lambdaphiphi =={
-		ParameterType 		-> External,
-		Value	      		-> 0,
-	  	InteractionOrder 	-> {NP,1}
-	}
-}
-
-
 
 
 M$ClassesDescription = {

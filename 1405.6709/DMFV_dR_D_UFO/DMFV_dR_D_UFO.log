@@ -1,12 +1,12 @@
 # This file was automatically created by FeynRules 2.3.35
 # Mathematica version: 12.0.0 for Linux x86 (64-bit) (April 7, 2019)
-# Date: Tue 26 Sep 2023 11:00:01
+# Date: Wed 4 Oct 2023 13:46:37
 
 
 # 
 # This is the logfile for the model DMFV_dR_D
 
-# Authors: Harun Acaro\:011flu, Monika Blanke
+# Authors: Harun Acaro\:011flu
 # Model version: 1.1
 # Checking the Quantum numbers
    * Electric charge defined.
@@ -43,8 +43,8 @@
 
 # Vertices
    * Calling FeynmanRules for 1 Lagrangians.
-   * Number of classes vertices: 144
-   * Number of flavored vertices: 144
+   * Number of classes vertices: 188
+   * Number of flavored vertices: 188
    * Saved vertices in InterfaceRun[ 1 ].
    * Checked QNumber conservation.
       - Quantum number GhostNumber conserved in all vertices.
@@ -57,20 +57,20 @@
 # Vertex definitions
 #
 
-   * 144 vertices written.
+   * 188 vertices written.
    * vertices.py written.
 #
 # Lorentz structure definitions
 #
 
-   * 22 lorentz structures written.
+   * 20 lorentz structures written.
    * lorentz.py written.
 #
 # Coupling definitions
 #
 
-   >>>> Non positive interaction order QED found for coupling GC_56.
-   * 90 couplings written.
+   >>>> Non positive interaction order QED found for coupling GC_65.
+   * 158 couplings written.
    * couplings.py written.
 #
 # Coupling order definitions
@@ -82,7 +82,7 @@
 # Decay definitions
 #
 
-   * 10 decays written.
+   * 16 decays written.
    * decay.py not written
 #
 # CTCoupling definitions

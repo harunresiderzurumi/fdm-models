@@ -45,6 +45,6 @@ else:
 gauge = [0, 1]
 
 
-__author__ = "Harun Acaro\:011flu, Monika Blanke"
+__author__ = "Harun Acaro\:011flu"
 __date__ = "09/25/2023"
 __version__= "1.1"
